@@ -1,0 +1,4 @@
+smssn:
+    resource: "@SMSSNBundle/Resources/config/routing.yml"
+    prefix:   /
+

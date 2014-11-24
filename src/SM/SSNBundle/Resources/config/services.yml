@@ -1,0 +1,4 @@
+services:
+#    smssn.example:
+#        class: SM\SSNBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,3 @@
+smssn_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: SMSSNBundle:Default:index }
