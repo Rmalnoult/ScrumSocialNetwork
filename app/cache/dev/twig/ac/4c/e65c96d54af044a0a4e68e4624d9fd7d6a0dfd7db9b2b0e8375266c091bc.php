@@ -36,7 +36,7 @@ class __TwigTemplate_ac4ce65c96d54af044a0a4e68e4624d9fd7d6a0dfd7db9b2b0e8375266c
         echo "\" />
     <link rel=\"stylesheet\" href=\"";
         // line 5
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/acmedemo/css/demo.css"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/smssn/css/style.css"), "html", null, true);
         echo "\" />
 ";
     }

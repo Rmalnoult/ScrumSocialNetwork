@@ -1,37 +1,86 @@
-{% extends "TwigBundle::layout.html.twig" %}
-
-{% block head %}
-    <link rel="icon" sizes="16x16" href="{{ asset('favicon.ico') }}" />
-    <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/demo.css') }}" />
-{% endblock %}
-
-{% block title 'Demo Bundle' %}
-
-{% block body %}
-    {% for flashMessage in app.session.flashbag.get('notice') %}
-        <div class="flash-message">
-            <em>Notice</em>: {{ flashMessage }}
-        </div>
-    {% endfor %}
-
-    {% block content_header %}
-        <ul id="menu">
-            {% block content_header_more %}
-                <li><a href="{{ path('_demo') }}">Demo Home</a></li>
-            {% endblock %}
-        </ul>
-
-        <div style="clear: both"></div>
+<!DOCTYPE html>
+<html>
+    <head>
+    {% block head %}
+        <link rel="icon" sizes="16x16" href="{{ asset('favicon.ico') }}" />
+        <link rel="stylesheet" href="{{ asset('bundles/smssn/css/style.css') }}" />
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,900' rel='stylesheet' type='text/css'>
+        <meta charset="UTF-8" />
+        <title>SSN</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     {% endblock %}
+    </head>
+    <body>
+        <div id="content">
+            <div id="header">
+                {% block header %}
+                    <h1>SSN</h1>
+                    <nav>
+                        <ul id="userNav">
+                            <li><a href="{{ url('smssn_homepage') }}">HOME</a></li>
 
-    <div class="block">
-        {% block content %}{% endblock %}
-    </div>
+                            <div>
+                                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                                    <li>
+                                        <a href="{{ path('fos_user_security_logout') }}">
+                                            {{ 'Logout'|trans({}, 'FOSUserBundle') }}
+                                        </a>
+                                    </li>
+                                {% else %}
+                                    <li><a href="{{ url('fos_user_security_login') }}">Login</a></li>
+                                   <li><a href="{{ url('fos_user_registration_register') }}">Register</a></li>
+                                {% endif %}
+                            </div>
 
-    {% if code is defined %}
-        <h2>Code behind this page</h2>
-        <div class="block">
-            <div class="symfony-content">{{ code|raw }}</div>
+                            
+                        </ul>
+                    </nav>
+                
+                {% endblock %}
+            </div>
+            
+            <div id="container">
+                {% block body %}
+                    
+
+
+                    {% for flashMessage in app.session.flashbag.get('notice') %}
+                        <div class="flash-message">
+                            <em>Notice</em>: {{ flashMessage }}
+                        </div>
+                    {% endfor %}
+                
+
+
+                    <div class="content">
+                        {% block content %}
+                            <div>
+                                {% block fos_user_content %}
+                                {% endblock fos_user_content %}
+                            </div>
+                        {% endblock %}
+                        <div class="clear"></div>
+                    </div>
+
+
+                
+                    {% if code is defined %}
+                        <h2>Code behind this page</h2>
+                        <div class="block">
+                            <div class="symfony-content">{{ code|raw }}</div>
+                        </div>
+                    {% endif %}
+                {% endblock %}
+            </div>
+            <div id="footer">
+                {% block footer %}
+                    
+                {% endblock %}
+            </div>
         </div>
-    {% endif %}
-{% endblock %}
+        {% block javascripts %}
+        
+        {% endblock %}
+    </body>
+</html>

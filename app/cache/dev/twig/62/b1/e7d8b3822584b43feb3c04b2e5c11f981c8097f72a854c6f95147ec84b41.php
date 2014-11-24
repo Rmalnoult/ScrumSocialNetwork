@@ -7,7 +7,7 @@ class __TwigTemplate_62b1e7d8b3822584b43feb3c04b2e5c11f981c8097f72a854c6f95147ec
     {
         parent::__construct($env);
 
-        $this->parent = $this->env->loadTemplate("SMUserBundle::layout.html.twig");
+        $this->parent = $this->env->loadTemplate("SMSSNBundle::layout.html.twig");
 
         $this->blocks = array(
             'fos_user_content' => array($this, 'block_fos_user_content'),
@@ -16,7 +16,7 @@ class __TwigTemplate_62b1e7d8b3822584b43feb3c04b2e5c11f981c8097f72a854c6f95147ec
 
     protected function doGetParent(array $context)
     {
-        return "SMUserBundle::layout.html.twig";
+        return "SMSSNBundle::layout.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
