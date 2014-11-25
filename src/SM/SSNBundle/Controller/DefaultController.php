@@ -11,4 +11,6 @@ class DefaultController extends Controller
         // return $this->render('SMSSNBundle:Default:index.html.twig', array('name' => $name));
         return $this->render('SMSSNBundle:Default:index.html.twig');
     }
+
+
 }
