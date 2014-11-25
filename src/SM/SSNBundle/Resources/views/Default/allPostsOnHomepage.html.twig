@@ -1,0 +1,19 @@
+{% extends "SMSSNBundle::layout.html.twig" %}
+
+
+{% block content %}
+    <h1 class="title">Hello world!</h1>
+
+	<h2>POSTS</h2>
+	
+	<ul>
+		{% for post in posts %}
+		    	<div class="card">
+		    		<h3 class="a">{{ post.title }}</h3>
+		    		<p class="postContent" >{{ post.content }} </p>
+		    	</div>
+		{% endfor %}
+	</ul>
+
+
+{% endblock %}

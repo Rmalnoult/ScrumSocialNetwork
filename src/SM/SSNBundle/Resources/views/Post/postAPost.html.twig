@@ -1,7 +1,8 @@
-{% extends "::base.html.twig" %}
+{% extends "SMSSNBundle::layout.html.twig" %}
 
 {% block title %}SMSSNBundle:Post:postAPost{% endblock %}
 
 {% block body %}
-<h1>Welcome to the Post:postAPost page</h1>
+	<h1>Welcome to the Post:postAPost page</h1>
+	<div class="postForm">{{ form(form) }}</div>	
 {% endblock %}

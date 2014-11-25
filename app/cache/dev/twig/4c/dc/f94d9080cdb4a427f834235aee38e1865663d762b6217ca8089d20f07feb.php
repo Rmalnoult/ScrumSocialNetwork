@@ -38,26 +38,26 @@ class __TwigTemplate_4cdcf94d9080cdb4a427f834235aee38e1865663d762b6217ca8089d20f
                 ";
         // line 17
         $this->displayBlock('header', $context, $blocks);
-        // line 41
+        // line 51
         echo "            </div>
             
             <div id=\"container\">
                 ";
-        // line 44
+        // line 54
         $this->displayBlock('body', $context, $blocks);
-        // line 75
+        // line 85
         echo "            </div>
             <div id=\"footer\">
                 ";
-        // line 77
+        // line 87
         $this->displayBlock('footer', $context, $blocks);
-        // line 80
+        // line 90
         echo "            </div>
         </div>
         ";
-        // line 82
+        // line 92
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 85
+        // line 95
         echo "    </body>
 </html>";
     }
@@ -108,30 +108,52 @@ class __TwigTemplate_4cdcf94d9080cdb4a427f834235aee38e1865663d762b6217ca8089d20f
         // line 24
         if ($this->env->getExtension('security')->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
             // line 25
-            echo "                                    <li>
+            echo "                                
+                                    <li>
                                         <a href=\"";
-            // line 26
+            // line 27
+            echo $this->env->getExtension('routing')->getPath("post_a_post");
+            echo "\">
+                                            ";
+            // line 28
+            echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Post", array(), "FOSUserBundle"), "html", null, true);
+            echo "
+                                        </a>
+                                    </li>                                
+                                    <li>
+                                        <a href=\"";
+            // line 32
             echo $this->env->getExtension('routing')->getPath("fos_user_security_logout");
             echo "\">
                                             ";
-            // line 27
+            // line 33
             echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Logout", array(), "FOSUserBundle"), "html", null, true);
             echo "
                                         </a>
                                     </li>
+                                  <li>
+                                        <a href=\"";
+            // line 37
+            echo $this->env->getExtension('routing')->getPath("fos_user_profile_edit");
+            echo "\">
+                                            ";
+            // line 38
+            echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Profil", array(), "FOSUserBundle"), "html", null, true);
+            echo "
+                                        </a>
                                 ";
         } else {
-            // line 31
+            // line 41
             echo "                                    <li><a href=\"";
             echo $this->env->getExtension('routing')->getUrl("fos_user_security_login");
             echo "\">Login</a></li>
                                    <li><a href=\"";
-            // line 32
+            // line 42
             echo $this->env->getExtension('routing')->getUrl("fos_user_registration_register");
             echo "\">Register</a></li>
                                 ";
         }
-        // line 34
+        // line 44
         echo "                            </div>
 
                             
@@ -141,22 +163,22 @@ class __TwigTemplate_4cdcf94d9080cdb4a427f834235aee38e1865663d762b6217ca8089d20f
                 ";
     }
 
-    // line 44
+    // line 54
     public function block_body($context, array $blocks = array())
     {
-        // line 45
+        // line 55
         echo "                    
 
 
                     ";
-        // line 48
+        // line 58
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "flashbag", array()), "get", array(0 => "notice"), "method"));
         foreach ($context['_seq'] as $context["_key"] => $context["flashMessage"]) {
-            // line 49
+            // line 59
             echo "                        <div class=\"flash-message\">
                             <em>Notice</em>: ";
-            // line 50
+            // line 60
             echo twig_escape_filter($this->env, $context["flashMessage"], "html", null, true);
             echo "
                         </div>
@@ -165,69 +187,69 @@ class __TwigTemplate_4cdcf94d9080cdb4a427f834235aee38e1865663d762b6217ca8089d20f
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flashMessage'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 53
+        // line 63
         echo "                
 
 
                     <div class=\"content\">
                         ";
-        // line 57
+        // line 67
         $this->displayBlock('content', $context, $blocks);
-        // line 63
+        // line 73
         echo "                        <div class=\"clear\"></div>
                     </div>
 
 
                 
                     ";
-        // line 68
+        // line 78
         if (array_key_exists("code", $context)) {
-            // line 69
+            // line 79
             echo "                        <h2>Code behind this page</h2>
                         <div class=\"block\">
                             <div class=\"symfony-content\">";
-            // line 71
+            // line 81
             echo (isset($context["code"]) ? $context["code"] : $this->getContext($context, "code"));
             echo "</div>
                         </div>
                     ";
         }
-        // line 74
+        // line 84
         echo "                ";
     }
 
-    // line 57
+    // line 67
     public function block_content($context, array $blocks = array())
     {
-        // line 58
+        // line 68
         echo "                            <div>
                                 ";
-        // line 59
+        // line 69
         $this->displayBlock('fos_user_content', $context, $blocks);
-        // line 61
+        // line 71
         echo "                            </div>
                         ";
     }
 
-    // line 59
+    // line 69
     public function block_fos_user_content($context, array $blocks = array())
     {
-        // line 60
+        // line 70
         echo "                                ";
     }
 
-    // line 77
+    // line 87
     public function block_footer($context, array $blocks = array())
     {
-        // line 78
+        // line 88
         echo "                    
                 ";
     }
 
-    // line 82
+    // line 92
     public function block_javascripts($context, array $blocks = array())
     {
-        // line 83
+        // line 93
         echo "        
         ";
     }
@@ -239,6 +261,6 @@ class __TwigTemplate_4cdcf94d9080cdb4a427f834235aee38e1865663d762b6217ca8089d20f
 
     public function getDebugInfo()
     {
-        return array (  231 => 83,  228 => 82,  223 => 78,  220 => 77,  216 => 60,  213 => 59,  208 => 61,  206 => 59,  203 => 58,  200 => 57,  196 => 74,  190 => 71,  186 => 69,  184 => 68,  177 => 63,  175 => 57,  169 => 53,  160 => 50,  157 => 49,  153 => 48,  148 => 45,  145 => 44,  135 => 34,  130 => 32,  125 => 31,  118 => 27,  114 => 26,  111 => 25,  109 => 24,  103 => 21,  98 => 18,  95 => 17,  90 => 10,  83 => 11,  81 => 10,  74 => 6,  69 => 5,  66 => 4,  61 => 85,  59 => 82,  55 => 80,  53 => 77,  49 => 75,  47 => 44,  42 => 41,  40 => 17,  34 => 13,  32 => 4,  27 => 1,);
+        return array (  253 => 93,  250 => 92,  245 => 88,  242 => 87,  238 => 70,  235 => 69,  230 => 71,  228 => 69,  225 => 68,  222 => 67,  218 => 84,  212 => 81,  208 => 79,  206 => 78,  199 => 73,  197 => 67,  191 => 63,  182 => 60,  179 => 59,  175 => 58,  170 => 55,  167 => 54,  157 => 44,  152 => 42,  147 => 41,  141 => 38,  137 => 37,  130 => 33,  126 => 32,  119 => 28,  115 => 27,  111 => 25,  109 => 24,  103 => 21,  98 => 18,  95 => 17,  90 => 10,  83 => 11,  81 => 10,  74 => 6,  69 => 5,  66 => 4,  61 => 95,  59 => 92,  55 => 90,  53 => 87,  49 => 85,  47 => 54,  42 => 51,  40 => 17,  34 => 13,  32 => 4,  27 => 1,);
     }
 }

@@ -133,7 +133,12 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return $this->redirect($pathinfo.'/', 'smssn_homepage');
             }
 
-            return array (  '_controller' => 'SM\\SSNBundle\\Controller\\DefaultController::indexAction',  '_route' => 'smssn_homepage',);
+            return array (  '_controller' => 'SM\\SSNBundle\\Controller\\DefaultController::homeAction',  '_route' => 'smssn_homepage',);
+        }
+
+        // post_a_post
+        if ($pathinfo === '/postAPost') {
+            return array (  '_controller' => 'SM\\SSNBundle\\Controller\\PostController::postAPostAction',  '_route' => 'post_a_post',);
         }
 
         if (0 === strpos($pathinfo, '/log')) {

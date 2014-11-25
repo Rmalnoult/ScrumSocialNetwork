@@ -29,6 +29,7 @@ class __TwigTemplate_79eca6737048a011721adfe85df3d89759dfc3ea1b5b99dabeacd74cfe5
     {
         // line 5
         echo "    <h1 class=\"title\">Hello world!</h1>
+
 ";
     }
 

@@ -1,6 +1,6 @@
 smssn_homepage:
     path:     /
-    defaults: { _controller: SMSSNBundle:Default:index }
+    defaults: { _controller: SMSSNBundle:Default:home }
 
 post_a_post:
     path:     /postAPost
