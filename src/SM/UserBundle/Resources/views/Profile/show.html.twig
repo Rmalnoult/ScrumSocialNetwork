@@ -1,9 +1,5 @@
-{% extends "SMSSNBundle::layout.html.twig" %}
+{% extends "FOSUserBundle::layout.html.twig" %}
 
 {% block fos_user_content %}
-<p>hello custom profile</p>
-<div class="fos_user_user_show">
-    <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
-    <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
-</div>
+{% include "FOSUserBundle:Profile:show_content.html.twig" %}
 {% endblock fos_user_content %}
