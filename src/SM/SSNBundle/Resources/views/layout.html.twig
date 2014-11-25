@@ -27,6 +27,10 @@
                                             {{ 'Logout'|trans({}, 'FOSUserBundle') }}
                                         </a>
                                     </li>
+                                  <li>
+                                        <a href="{{ path('fos_user_profile_edit') }}">
+                                            {{ 'Profil'|trans({}, 'FOSUserBundle') }}
+                                        </a>
                                 {% else %}
                                     <li><a href="{{ url('fos_user_security_login') }}">Login</a></li>
                                    <li><a href="{{ url('fos_user_registration_register') }}">Register</a></li>
