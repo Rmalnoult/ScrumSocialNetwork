@@ -9,11 +9,9 @@
 	<ul>
 		{% for post in posts %}
 		    	<div class="card">
-		    		<h3 class="a">{{ post.title }}</h3>
+		    		<h3 class="postTitle">{{ post.title }}</h3>
 		    		<p class="postContent" >{{ post.content }} </p>
 		    	</div>
 		{% endfor %}
 	</ul>
-
-
 {% endblock %}

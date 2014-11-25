@@ -38,7 +38,7 @@ body, #content {
     margin: 0;
 }
 .card {
-    width: auto;
+    width: 500px;
     padding: 40px;
     background-color: #fff;
     float: left;
@@ -50,6 +50,7 @@ body, #content {
     -webkit-box-shadow: 0 2px 5px rgba(0,0,0,.26);
     -moz-box-shadow: 0 2px 5px rgba(0,0,0,.26);
     box-shadow: 0 2px 5px rgba(0,0,0,.26);
+
 }
 .card a {
     text-decoration: none;
